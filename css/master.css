@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "titling-gothic-fb";
+  color: white;
+  cursor: none;
+}
+
+::-moz-selection {
+  background: white;
+  color: black;
+}
+
+::selection {
+  background: white;
+  color: black;
+}
+
+::-webkit-scrollbar {
+  background: black;
+  border-left: 1px solid white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+#cursor {
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+  -webkit-filter: drop-shadow(2px 2px 3px black);
+          filter: drop-shadow(2px 2px 3px black);
+}
+
+#cursor div {
+  background: white;
+  position: absolute;
+}
+
+#cursor .a {
+  height: 2px;
+  width: 32px;
+  margin: 15px 0;
+}
+
+#cursor .b {
+  height: 32px;
+  width: 2px;
+  margin: 0 15px;
+}
+/*# sourceMappingURL=master.css.map */

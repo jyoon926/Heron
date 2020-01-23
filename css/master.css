@@ -15,12 +15,18 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'GoodSans';
+  font-family: 'Adieu';
   cursor: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
 }
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -49,6 +55,10 @@ body {
   -webkit-backdrop-filter: invert(1);
           backdrop-filter: invert(1);
   margin: -3px;
+  -webkit-transition-duration: .075s;
+          transition-duration: .075s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
 }
 
 #cursorRing {
@@ -114,6 +124,10 @@ body {
           align-items: center;
   position: fixed;
   z-index: 100;
+  -webkit-transition-duration: .75s;
+          transition-duration: .75s;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0, 1);
+          transition-timing-function: cubic-bezier(0, 0, 0, 1);
 }
 
 #header #logo {
@@ -134,10 +148,126 @@ body {
   padding-right: 10px;
 }
 
-#header #menuIcon {
-  height: 8px;
+#header .menu-icon {
+  height: 24px;
+  width: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 20px;
   margin: 0 -20px;
+  z-index: 400;
+}
+
+#header .menu-icon div {
+  width: 24px;
+  height: 2px;
+  -webkit-backdrop-filter: invert(1);
+          backdrop-filter: invert(1);
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+
+#header .menu-icon .a {
+  margin-bottom: 5px;
+}
+
+#header #links {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 100%;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0, 1);
+          transition-timing-function: cubic-bezier(0, 0, 0, 1);
+  z-index: 200;
+}
+
+#header #links ul {
+  padding-left: 20vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#header #links ul:hover a {
+  opacity: .4;
+}
+
+#header #links ul a {
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  color: white;
+  font-size: 6vw;
+}
+
+#header #links ul a:hover {
+  opacity: 1;
+  padding-left: 70px;
+}
+
+#header #checkbox {
+  position: absolute;
+  top: -20px;
+}
+
+#header #checkbox:checked ~ #links {
+  left: 0;
+}
+
+#header #checkbox:checked ~ .menu-icon div {
+  position: absolute;
+  width: 30px;
+}
+
+#header #checkbox:checked ~ .menu-icon .a {
+  margin-bottom: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#header #checkbox:checked ~ .menu-icon .b {
+  margin-top: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 #content {
@@ -179,7 +309,7 @@ body {
   font-size: 16px;
 }
 
-#footer {
+.footer {
   height: 100px;
   width: 88vw;
   padding: 0 6vw;
@@ -199,7 +329,7 @@ body {
           flex-direction: row;
 }
 
-#footer .left {
+.footer .left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -215,14 +345,14 @@ body {
           flex-direction: row;
 }
 
-#footer .left a {
+.footer .left a {
   font-size: 16px;
   text-decoration: none;
   color: white;
   padding-left: 40px;
 }
 
-#footer .right {
+.footer .right {
   color: white;
   font-size: 14px;
 }

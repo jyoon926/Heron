@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/master.css">
     <link rel="icon" href="img/logo.png">
 </head>
-<body>
+<body onload="init()">
     <div id="cursor"></div>
     <div id="cursorRing">
         <div class="out"></div>
@@ -19,10 +19,22 @@
     </div>
 
     <div id="header">
-        <div id="logo" class="hover" onmouseover="hover()" onmouseout="hoverOut()">
+        <a id="logo" href="index.html" class="hover" onmouseover="hover()" onmouseout="hoverOut()">
             <img src="img/logo.svg" alt="">HERON
+        </a>
+        <input type="checkbox" id="checkbox" class="checkbox">
+        <div id="links">
+            <ul>
+                <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">Home</a>
+                <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">E1</a>
+                <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">About</a>
+                <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">Contact</a>
+            </ul>
         </div>
-        <img id="menuIcon" src="img/Menu Icon.svg" alt="" onmouseover="hover()" onmouseout="hoverOut()">
+        <label for="checkbox" class="menu-icon" onmouseover="hover()" onmouseout="hoverOut()">
+            <div class="a"></div>
+            <div class="b"></div>
+        </label>
     </div>
 
     <div id="content">
@@ -38,7 +50,7 @@
         </div>
     </div>
 
-    <div id="footer">
+    <div class="footer">
         <div class="left">
             <img src="img/logo white.svg" alt="" class="logo">
             <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">HOME</a>
@@ -51,5 +63,16 @@
     <div id="preload"><img id="preloadImg" src="img/logo.svg" alt=""></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="js/script.js"></script>
-</body>
+    <script>
+        $('#checkbox').change(function () {
+            if ($(this).prop("checked")) {
+                $('html').css("overflowY", "hidden");
+            }
+            else {
+                $('html').css("overflowY", "scroll");
+            }
+        });
+    </script>
+    <script src="js/smoothscroll.js"></script>
+</bodyonload="init()">
 </html>

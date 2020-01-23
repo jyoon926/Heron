@@ -1,7 +1,7 @@
 window.addEventListener('mousemove', cursor);
 var $win = $(window);
 var _cursor = document.getElementById('cursor');
-var _cursorFollower = document.getElementById('cursorFollower');
+var _cursorRing = document.getElementById('cursorRing');
 
 function everyTick() {
     cursor();
@@ -35,27 +35,27 @@ function getScroll()
 {
 }
 
-var offset = 200;
+var offset = 40;
 
 
 function cursor() {
-    _cursor.style.top = getY(event) - 16 + "px";
-	_cursor.style.left = getX(event) - 16 + "px";
-    _cursorFollower.style.top = getY(event) - offset + "px";
-    _cursorFollower.style.left = getX(event) - offset + "px";
+    _cursor.style.top = getY(event) + "px";
+    _cursor.style.left = getX(event) + "px";
+    _cursorRing.style.top = getY(event) + "px";
+    _cursorRing.style.left = getX(event) + "px";
 }
 
 function hover() {
-    _cursorFollower.style.transform = "scale(2)";
+    _cursorRing.style.width = "120px";
+    _cursorRing.style.height = "120px";
+    _cursorRing.style.margin = "-60px";
 }
 
 function hoverOut() {
-    _cursorFollower.style.transform = "scale(1)";
+    _cursorRing.style.width = "80px";
+    _cursorRing.style.height = "80px";
+    _cursorRing.style.margin = "-40px";
 }
-
-/**$win.on('scroll', function(){
-	$logo.css('transform', 'rotate(' + $win.scrollTop()/10 + 'deg)');
-});**/
 
 window.onload = function load() {
 }
@@ -76,6 +76,11 @@ function show(id, value) {
 }
 
 onReady(function () {
-    document.getElementById('preload').style.transform = "scaleY(0)";
+    document.getElementById('preload').style.opacity = "0";
     show('wrap', true);
+});
+
+//Parallax
+$win.on('scroll', function(){
+	//$('#heroImg').css('transform', 'translateY(' + $win.scrollTop()/5 + 'px)');
 });

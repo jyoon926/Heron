@@ -6,42 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Heron</title>
     <link rel="stylesheet" href="https://use.typekit.net/wed3sza.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/master.css">
     <link rel="icon" href="img/logo.png">
 </head>
 <body>
-    <div id="cursor">
-        <div class="a"></div>
-        <div class="b"></div>
-    </div>
-    <div id="menu">
-        <ul>
-            <a href="#">SHOP E1</a>
-            <a href="#">ABOUT</a>
-            <a href="#">CONTACT</a>
-        </ul>
-        <a href="index.html">HERON</a>
+    <div id="cursor"></div>
+    <div id="cursorRing">
+        <div class="out"></div>
+        <div class="in"></div>
     </div>
 
-    <div id="pageWrap">
-        
-        <img id="heroimg" src="img/Group 2.png" alt="">
+    <div id="header">
+        <div id="logo" class="hover" onmouseover="hover()" onmouseout="hoverOut()">
+            <img src="img/logo.svg" alt="">HERON
+        </div>
+        <img id="menuIcon" src="img/Menu Icon.svg" alt="" onmouseover="hover()" onmouseout="hoverOut()">
+    </div>
+
+    <div id="content">
         <div id="hero">
-            <h2>Meet the Heron E1.</h2>
-            <p>The Heron E1 provides impressive range, fast charging, and the thrilling feeling that only driving a Heron brings.</p>
-            <a href="#">Shop Now</a>
+            <h1>THE HERON E1</h1>
+            <div id="heroImg">
+                <img src="img/Edited Test.jpg" alt="">
+                <a href="#" class="button" onmouseover="hover()" onmouseout="hoverOut()">ORDER NOW</a>
+            </div>
         </div>
-
-        <hr id="hr1">
-
-        <div class="section1">
-            <h1>The ease of electric.</h1>
+        <div class="section">
+            <h1>Lorem ipsum dolor sit amet.</h1>
         </div>
-
-        <hr id="hr">
     </div>
-    <div id="preload"></div>
+
+    <div id="footer">
+        <div class="left">
+            <img src="img/logo white.svg" alt="" class="logo">
+            <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">HOME</a>
+            <a href="#" onmouseover="hover()" onmouseout="hoverOut()">ABOUT</a>
+            <a href="#" onmouseover="hover()" onmouseout="hoverOut()">CONTACT</a>
+        </div>
+        <p class="right">HERON © 2020</p>
+    </div>
+
+    <div id="preload"><img id="preloadImg" src="img/logo.svg" alt=""></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <script src="js/script.js"></script>
 </body>

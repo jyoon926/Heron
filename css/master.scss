@@ -1,74 +1,152 @@
+@font-face{
+    font-family:'Clarkson';
+    src:url(https://static1.squarespace.com/static/ta/5d5b097ace74150001a72708/253/assets/fonts/Clarkson-Light.woff2) format("woff2"),url(https://static1.squarespace.com/static/ta/5d5b097ace74150001a72708/253/assets/fonts/Clarkson-Light.woff) format("woff");font-weight:300;font-style:normal;
+}
+@font-face{
+    font-family:'Clarkson';
+    src:url(https://static1.squarespace.com/static/ta/5d5b097ace74150001a72708/253/assets/fonts/Clarkson-Medium.woff2) format("woff2"),url(https://static1.squarespace.com/static/ta/5d5b097ace74150001a72708/253/assets/fonts/Clarkson-Medium.woff) format("woff");font-weight:500;font-style:normal;
+}
 * {
     margin: 0;
     padding: 0;
-    font-family: "titling-gothic-fb";
-    color: white;
+    font-family: 'GoodSans';
     cursor: none;
 }
+html {
+    overflow-x: hidden;
+}
+body {
+    overflow-x: hidden;
+}
 ::selection {
-    background: white;
-    color: black;
-}
-::-webkit-scrollbar {
     background: black;
-    border-left: 1px solid white;
-}
-::-webkit-scrollbar-thumb {
-    background: white;
+    color: white;
 }
 #cursor {
+    top: 50vh;
+    left: 50vw;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     pointer-events: none;
-    filter: drop-shadow(2px 2px 3px black);
-    div {
-        background: rgba(255,255,255,1);
+    height: 6px;
+    width: 6px;
+    background: none;
+    backdrop-filter: invert(1);
+    margin: -3px;
+}
+#cursorRing {
+    top: 50vh;
+    left: 50vw;
+    position: fixed;
+    z-index: 999;
+    pointer-events: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    transition-duration: .15s;
+    transition-timing-function: ease-out;
+    margin: -40px;
+    .out {
         position: absolute;
+        height: 100%;
+        width: 100%;
+        background: none;
+        backdrop-filter: invert(1);
+        border-radius: 50%;
     }
-    .a {
-        height: 2px;
-        width: 32px;
-        margin: 15px 0;
-    }
-    .b {
-        height: 32px;
-        width: 2px;
-        margin: 0 15px;
+    .in {
+        position: absolute;
+        height: calc(100% - 4px);
+        width: calc(100% - 4px);
+        background: none;
+        backdrop-filter: invert(1);
+        border-radius: 50%;
     }
 }
-#menu {
-    position: fixed;
+#header {
+    width: 88vw;
+    padding: 0 6vw;
+    height: 80px;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 80px;
-    background: rgba(0,0,0,0.5);
-    border-bottom: 1px solid white;
+    background: #ffffff;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(1.5vw);
-    ul {
-        position: absolute;
+    position: fixed;
+    z-index: 100;
+    #logo {
         display: flex;
-        flex-direction: row;
-        width: 24vw;
-        justify-content: space-between;
-        margin: 0 40px; 
-        a {
-            text-decoration: none;
-            font-size: .8vw;
-            transition-duration: .3s;
-            font-weight: 400;
-            &:hover {
-                opacity: .4;
-            }
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 20px;
+        margin: 0 -20px;
+        img {
+            height: 32px;
+            padding-right: 10px;
         }
     }
-    a {
-        text-decoration: none;
-        font-size: 1.8vw;
-        margin: 0 auto;
-        font-weight: 700;
+    #menuIcon {
+        height: 8px;
+        padding: 20px;
+        margin: 0 -20px;
+    }
+}
+#content {
+    width: 88vw;
+    padding: 0 6vw;
+}
+#preload {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: white;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    transition-duration: 1.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    img {
+        height: 120px;
+    }
+}
+.button {
+    background: #000;
+    color: white;
+    padding: 30px 40px;
+    text-decoration: none;
+    font-size: 16px;
+}
+#footer {
+    height: 100px;
+    width: 88vw;
+    padding: 0 6vw;
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    .left {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        a {
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            padding-left: 40px;
+        }
+    }
+    .right {
+        color: white;
+        font-size: 14px;
     }
 }

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Heron</title>
-    <link rel="stylesheet" href="https://use.typekit.net/wed3sza.css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <title>Verto</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gys3ndu.css">
+    <!--<link rel="stylesheet" href="css/fonts.css"-->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/master.css">
     <link rel="icon" href="img/logo.png">
@@ -17,53 +18,41 @@
         <div class="out"></div>
         <div class="in"></div>
     </div>
-
-    <div id="header">
-        <a id="logo" href="index.html" class="hover" onmouseover="hover()" onmouseout="hoverOut()">
-            <img src="img/logo.svg" alt="">HERON
-        </a>
-        <input type="checkbox" id="checkbox" class="checkbox">
-        <div id="links">
-            <ul>
-                <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">Home</a>
-                <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">E1</a>
-                <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">About</a>
-                <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">Contact</a>
-            </ul>
+    
+    <div class="fixed">
+        <div class="top">
+            <div class="logo">
+                <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()"><img src="img/logo white.svg" alt="">VERTO</a>
+            </div>
+            <div class="links">
+                <a href="" onmouseover="hover()" onmouseout="hoverOut()">Models</a>
+                <a href="" onmouseover="hover()" onmouseout="hoverOut()">Process</a>
+                <a href="" onmouseover="hover()" onmouseout="hoverOut()">Company</a>
+            </div>
         </div>
-        <label for="checkbox" class="menu-icon" onmouseover="hover()" onmouseout="hoverOut()">
-            <div class="a"></div>
-            <div class="b"></div>
-        </label>
+        <div class="right">
+            <label for="#" onmouseover="hover()" onmouseout="hoverOut()"><div class="a"></div><div class="b"></div class=""><div class="c"></div></label>
+        </div>
+        <div class="bottom">
+            <p>© VERTO</p>
+        </div>
+        <div class="left">
+            <div class="scroll"><div class="wheel"></div></div>
+            <div class="line"></div>
+        </div>
     </div>
 
     <div id="content">
-        <div id="hero">
-            <h1>THE HERON E1</h1>
-            <div id="heroImg">
-                <img src="img/Edited Test.jpg" alt="">
-                <a href="#" class="button" onmouseover="hover()" onmouseout="hoverOut()">ORDER NOW</a>
-            </div>
+        <div class="hero">
+            <h2>Converting classic gasoline cars to all electric.</h2>
+            <a href="#" class="button" onmouseover="hover()" onmouseout="hoverOut()">Learn More</a>
         </div>
-        <div class="section">
-            <h1>Lorem ipsum dolor sit amet.</h1>
-        </div>
+        <!--section></section-->
     </div>
 
-    <div class="footer">
-        <div class="left">
-            <img src="img/logo white.svg" alt="" class="logo">
-            <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()">HOME</a>
-            <a href="#" onmouseover="hover()" onmouseout="hoverOut()">ABOUT</a>
-            <a href="#" onmouseover="hover()" onmouseout="hoverOut()">CONTACT</a>
-        </div>
-        <p class="right">HERON © 2020</p>
-    </div>
-
-    <div id="preload"><img id="preloadImg" src="img/logo.svg" alt=""></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <div id="preload"><img id="preloadImg" src="img/logo white.svg" alt=""></div>
     <script src="js/script.js"></script>
-    <script>
+    <!--script>
         $('#checkbox').change(function () {
             if ($(this).prop("checked")) {
                 $('html').css("overflowY", "hidden");
@@ -72,7 +61,6 @@
                 $('html').css("overflowY", "scroll");
             }
         });
-    </script>
-    <script src="js/smoothscroll.js"></script>
+    </script-->
 </bodyonload="init()">
 </html>

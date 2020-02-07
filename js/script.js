@@ -77,6 +77,7 @@ function show(id, value) {
 
 onReady(function () {
     document.getElementById('preload').style.opacity = "0";
+    document.getElementById('preloadImg').style.opacity = "0";
     show('wrap', true);
 });
 

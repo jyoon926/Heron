@@ -58,8 +58,8 @@
         pointer-events: none;
         background: none;
         @extend %flex-column;
-        height: $width;
-        width: $width;
+        height: 80px;
+        width: 80px;
         transition-duration: .15s;
         transition-timing-function: ease-out;
         margin: -40px;
@@ -203,7 +203,7 @@
             @keyframes scroll {
                 0% { height: 130px; margin-bottom: $width; }
                 33% { height: 0; margin-bottom: $width; }
-                66% { height: 0; margin-bottom: 210px; }
+                66% { height: 0; margin-bottom: 190px; }
                 100% { height: 130px; margin-bottom: $width; }
             }
             .line {

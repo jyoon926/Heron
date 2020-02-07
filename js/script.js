@@ -39,8 +39,10 @@ var offset = 40;
 
 
 function cursor() {
-    _cursor.style.transform = "translateX(" + getX(event) + "px) translateY(" + getY(event) + "px)";
-    _cursorRing.style.transform = "translateX(" + getX(event) + "px) translateY(" + getY(event) + "px)";
+    _cursor.style.top = getY(event) + "px";
+    _cursor.style.left = getX(event) + "px";
+    _cursorRing.style.top = getY(event) + "px";
+    _cursorRing.style.left = getX(event) + "px";
 }
 
 function hover() {

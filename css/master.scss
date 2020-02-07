@@ -11,7 +11,13 @@
     padding: 0;
     font-family: 'acumin-pro-wide', sans-serif;
     cursor: none;
-    font-weight: 300;
+    font-weight: 400;
+}
+%p {
+    font-size: 1vw;
+}
+%h2 {
+    font-size: 2vw;
 }
 a {
     text-decoration: none;
@@ -128,8 +134,8 @@ body {
             justify-content: flex-start;
             align-items: center;
             img {
-                height: 24px;
-                padding-right: 12px;
+                height: 1.5vw;
+                padding-right: 1vw;
             }
             a {
                 display: flex;
@@ -137,14 +143,14 @@ body {
                 justify-content: flex-start;
                 align-items: center;
                 color: white;
-                font-size: 20px;
+                font-size: 1.25vw;
             }
         }
         .links {
             a {
                 color: white;
-                font-size: 16px;
-                margin-right: 100px;
+                @extend %p;
+                margin-right: 7vw;
             }
         }
     }
@@ -157,10 +163,10 @@ body {
             justify-content: center;
             align-items: center;
             div {
-                width: 40%;
-                height: 2px;
+                width: 1.5vw;
+                height: 1px;
                 background: white;
-                margin: 2px;
+                margin: .15vw;
             }
         }
     }
@@ -215,7 +221,7 @@ body {
         justify-content: flex-end;
         align-items: center;
         p {
-            font-size: 16px;
+            @extend %p;
             color: white;
             opacity: .6;
         }
@@ -244,4 +250,5 @@ body {
     background: black;
     padding: 20px 40px;
     color: white;
+    @extend %p;
 }

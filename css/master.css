@@ -17,7 +17,11 @@
   padding: 0;
   font-family: 'acumin-pro-wide', sans-serif;
   cursor: none;
-  font-weight: 300;
+  font-weight: 400;
+}
+
+.fixed .top .links a, .fixed .bottom p, .button {
+  font-size: 1vw;
 }
 
 a {
@@ -198,8 +202,8 @@ body {
 }
 
 .fixed .top .logo img {
-  height: 24px;
-  padding-right: 12px;
+  height: 1.5vw;
+  padding-right: 1vw;
 }
 
 .fixed .top .logo a {
@@ -217,13 +221,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  font-size: 20px;
+  font-size: 1.25vw;
 }
 
 .fixed .top .links a {
   color: white;
-  font-size: 16px;
-  margin-right: 100px;
+  margin-right: 7vw;
 }
 
 .fixed .right label {
@@ -245,10 +248,10 @@ body {
 }
 
 .fixed .right label div {
-  width: 40%;
-  height: 2px;
+  width: 1.5vw;
+  height: 1px;
   background: white;
-  margin: 2px;
+  margin: .15vw;
 }
 
 .fixed .left {
@@ -403,7 +406,6 @@ body {
 }
 
 .fixed .bottom p {
-  font-size: 16px;
   color: white;
   opacity: .6;
 }

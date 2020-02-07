@@ -1,3 +1,7 @@
+.hero h2 {
+  font-size: 3.5vw;
+}
+
 .hero {
   height: calc(100vh - 8vw);
   background-image: url("../img/bmw-e30.jpg");
@@ -22,9 +26,8 @@
 }
 
 .hero h2 {
-  font-size: 64px;
   line-height: 1.2;
-  max-width: 900px;
+  max-width: 50vw;
   margin-bottom: 40px;
 }
 

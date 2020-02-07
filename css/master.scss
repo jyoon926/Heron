@@ -51,8 +51,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
-    width: 80px;
+    height: 4vw;
+    width: 4vw;
     transition-duration: .15s;
     transition-timing-function: ease-out;
     margin: -40px;
@@ -100,20 +100,20 @@ body {
     .top, .bottom {
         position: fixed;
         top: 0;
-        left: 80px;
-        width: calc(100vw - 160px);
-        height: 80px;
+        left: 4vw;
+        width: calc(100vw - 8vw);
+        height: 4vw;
         background: black;
     }
     .bottom {
-        top: calc(100vh - 80px);
+        top: calc(100vh - 4vw);
     }
     .right, .left {
         position: fixed;
         top: 0;
         right: 0;
         height: 100vh;
-        width: 80px;
+        width: 4vw;
         background: black;
     }
     .top {
@@ -122,13 +122,13 @@ body {
         justify-content: flex-start;
         align-items: center;
         .logo {
-            width: calc(50vw - 80px);
+            width: calc(50vw - 4vw);
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
             img {
-                height: 28px;
+                height: 24px;
                 padding-right: 12px;
             }
             a {
@@ -137,7 +137,7 @@ body {
                 justify-content: flex-start;
                 align-items: center;
                 color: white;
-                font-size: 24px;
+                font-size: 20px;
             }
         }
         .links {
@@ -150,14 +150,14 @@ body {
     }
     .right {
         label {
-            height: 80px;
-            width: 80px;
+            height: 4vw;
+            width: 4vw;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             div {
-                width: 30px;
+                width: 40%;
                 height: 2px;
                 background: white;
                 margin: 2px;
@@ -165,18 +165,18 @@ body {
         }
     }
     .left {
-        right: calc(100vw - 80px);
+        right: calc(100vw - 4vw);
         display: flex;
         flex-direction: column-reverse;
         justify-content: flex-start;
         align-items: center;
-        padding: 80px 0;
+        padding: 4vw 0;
         box-sizing: border-box;
         .scroll {
-            width: 26px;
-            height: 44px;
+            width: 20px;
+            height: 35px;
             border: 2px solid white;
-            border-radius: 13px;
+            border-radius: 10px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -196,16 +196,16 @@ body {
             }
         }
         @keyframes scroll {
-            0% { height: 130px; margin-bottom: 80px; }
-            33% { height: 0; margin-bottom: 80px; }
+            0% { height: 130px; margin-bottom: 4vw; }
+            33% { height: 0; margin-bottom: 4vw; }
             66% { height: 0; margin-bottom: 210px; }
-            100% { height: 130px; margin-bottom: 80px; }
+            100% { height: 130px; margin-bottom: 4vw; }
         }
         .line {
             height: 130px;
             width: 2px;
             background: white;
-            margin-bottom: 80px;
+            margin-bottom: 4vw;
             animation: scroll 3s ease infinite;
         }
     }
@@ -224,10 +224,10 @@ body {
 #content {
     position: absolute;
     z-index: 1;
-    top: 80px;
-    left: 80px;
-    width: calc(100vw - 160px);
-    height: calc(100vh - 160px);
+    top: 4vw;
+    left: 4vw;
+    width: calc(100vw - 8vw);
+    height: calc(100vh - 8vw);
     overflow-x: hidden;
     overflow-y: scroll;
     margin: 0;

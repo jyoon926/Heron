@@ -1,11 +1,11 @@
 .hero {
-  height: calc(100vh - 160px);
+  height: calc(100vh - 8vw);
   background-image: url("../img/bmw-e30.jpg");
   background-size: cover;
   background-position: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 80px;
+  padding: 4vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,7 +29,7 @@
 }
 
 section {
-  padding: 80px;
+  padding: 4vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }

@@ -1,0 +1,143 @@
+@media screen and (max-width: 1000px) {
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'acumin-pro-wide', sans-serif;
+        font-weight: 300;
+    }
+    %flex-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    %flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    %p {
+        font-size: 16px;
+    }
+    %h2 {
+        font-size: 60px;
+    }
+    $width: 60px;
+    $widthDouble: 120px;
+    a {
+        text-decoration: none;
+    }
+    html {
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+    body {
+        overflow: hidden;
+    }
+    #cursor {
+        display: none;
+    }
+    #cursorRing {
+        display: none;
+    }
+    #preload {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        background: black;
+        z-index: 998;
+        top: 0;
+        left: 0;
+        transition-duration: 1.5s;
+        transition-delay: .5s;
+        @extend %flex-column;
+        pointer-events: none;
+        img {
+            height: 120px;
+            transition-duration: .5s;
+        }
+    }
+
+    .fixed {
+        top: 0;
+        left: 0;
+        z-index: 0;
+        .top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: $width;
+            background: black;
+        }
+        .top {
+            @extend %flex-row;
+            justify-content:  space-between;
+            box-sizing: border-box;
+            padding-left: $width;
+            .logo {
+                width: auto;
+                @extend %flex-row;
+                justify-content: flex-start;
+                img {
+                    height: 24px;
+                    padding-right: 20px;
+                }
+                a {
+                    @extend %flex-row;
+                    justify-content: flex-start;
+                    color: white;
+                    font-size: 22px;
+                }
+            }
+            .links {
+                display: none;
+            }
+            label {
+                height: $width;
+                width: $width;
+                margin-left: calc(50vw - 420px - #{$width});
+                @extend %flex-column;
+                div {
+                    width: 27px;
+                    height: 1px;
+                    background: white;
+                    margin: 2px;
+                }
+            }
+        }
+        .left, .right, .bottom {
+            display: none;
+        }
+    }
+    #content {
+        position: absolute;
+        z-index: 1;
+        top: $width;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - #{$width});
+        overflow-x: hidden;
+        overflow-y: scroll;
+        margin: 0;
+        padding: 0;
+        &::-webkit-scrollbar {
+            width: 0px;
+            background: black;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: white;
+        }
+    }
+    .button {
+        background: black;
+        padding: 20px 40px;
+        color: white;
+        @extend %p;
+        transition-duration: .3s;
+        &:hover {
+            background: rgba(0,0,0,0.75);
+        }
+    }
+}

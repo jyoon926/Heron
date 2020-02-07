@@ -1,28 +1,41 @@
+%flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+%flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 %p {
-    font-size: 1vw;
+    font-size: 16px;
 }
 %h2 {
-    font-size: 3.5vw;
+    font-size: 60px;
 }
+$width: 60px;
+$widthDouble: 120px;
 .hero {
-    height: calc(100vh - 8vw);
+    height: 100%;
     background-image: url('../img/bmw-e30.jpg');
     background-size: cover;
     background-position: center;
     box-sizing: border-box;
-    padding: 4vw;
-    display: flex;
-    flex-direction: column;
+    padding: $width;
+    @extend %flex-column;
     justify-content: flex-start;
     align-items: flex-start;
     h2 {
         @extend %h2;
         line-height: 1.2;
-        max-width: 50vw;
+        max-width: 900px;
         margin-bottom: 40px;
     }
 }
-section {
-    padding: 4vw;
+.section1 {
+    padding: $width;
     box-sizing: border-box;
 }

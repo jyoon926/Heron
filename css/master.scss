@@ -1,254 +1,256 @@
-@font-face{
-    font-family:'Clarkson';
-    src:url(https://static1.squarespace.com/static/ta/5d5b097ace74150001a72708/253/assets/fonts/Clarkson-Light.woff2) format("woff2"),url(https://static1.squarespace.com/static/ta/5d5b097ace74150001a72708/253/assets/fonts/Clarkson-Light.woff) format("woff");font-weight:300;font-style:normal;
-}
-@font-face{
-    font-family:'Clarkson';
-    src:url(https://static1.squarespace.com/static/ta/5d5b097ace74150001a72708/253/assets/fonts/Clarkson-Medium.woff2) format("woff2"),url(https://static1.squarespace.com/static/ta/5d5b097ace74150001a72708/253/assets/fonts/Clarkson-Medium.woff) format("woff");font-weight:500;font-style:normal;
-}
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'acumin-pro-wide', sans-serif;
-    cursor: none;
-    font-weight: 400;
-}
-%p {
-    font-size: 1vw;
-}
-%h2 {
-    font-size: 2vw;
-}
-a {
-    text-decoration: none;
-}
-html {
-    overflow: hidden;
-    scroll-behavior: smooth;
-}
-body {
-    overflow: hidden;
-}
-::selection {
-    background: black;
-    color: white;
-}
-#cursor {
-    top: 50vh;
-    left: 50vw;
-    position: fixed;
-    z-index: 1000;
-    pointer-events: none;
-    height: 6px;
-    width: 6px;
-    background: none;
-    backdrop-filter: invert(1);
-    margin: -3px;
-    transition-duration: .03s;
-    transition-timing-function: ease-out;
-}
-#cursorRing {
-    top: 50vh;
-    left: 50vw;
-    position: fixed;
-    z-index: 999;
-    pointer-events: none;
-    background: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 4vw;
-    width: 4vw;
-    transition-duration: .15s;
-    transition-timing-function: ease-out;
-    margin: -40px;
-    .out {
-        position: absolute;
-        height: 100%;
-        width: 100%;
+@media screen and (min-width: 1001px) {
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'acumin-pro-wide', sans-serif;
+        cursor: none;
+        font-weight: 300;
+    }
+    %flex-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    %flex-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    %p {
+        font-size: 16px;
+    }
+    %h2 {
+        font-size: 60px;
+    }
+    $width: 60px;
+    $widthDouble: 120px;
+    a {
+        text-decoration: none;
+    }
+    html {
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+    body {
+        overflow: hidden;
+    }
+    #cursor {
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 1000;
+        pointer-events: none;
+        height: 6px;
+        width: 6px;
         background: none;
         backdrop-filter: invert(1);
-        border-radius: 50%;
+        margin: -3px;
+        transition-duration: .0s;
+        transition-timing-function: ease-out;
     }
-    .in {
-        position: absolute;
-        height: calc(100% - 4px);
-        width: calc(100% - 4px);
+    #cursorRing {
+        top: 0;
+        left: 0;
+        position: fixed;
+        z-index: 999;
+        pointer-events: none;
         background: none;
-        backdrop-filter: invert(1);
-        border-radius: 50%;
+        @extend %flex-column;
+        height: $width;
+        width: $width;
+        transition-duration: .15s;
+        transition-timing-function: ease-out;
+        margin: -40px;
+        .out {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: none;
+            backdrop-filter: invert(1);
+            border-radius: 50%;
+        }
+        .in {
+            position: absolute;
+            height: calc(100% - 4px);
+            width: calc(100% - 4px);
+            background: none;
+            backdrop-filter: invert(1);
+            border-radius: 50%;
+        }
     }
-}
-#preload {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    background: black;
-    z-index: 998;
-    top: 0;
-    left: 0;
-    transition-duration: 1.5s;
-    transition-delay: .5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-    img {
-        height: 120px;
-        transition-duration: .5s;
-    }
-}
-
-.fixed {
-    top: 0;
-    left: 0;
-    z-index: 0;
-    .top, .bottom {
-        position: fixed;
-        top: 0;
-        left: 4vw;
-        width: calc(100vw - 8vw);
-        height: 4vw;
-        background: black;
-    }
-    .bottom {
-        top: calc(100vh - 4vw);
-    }
-    .right, .left {
-        position: fixed;
-        top: 0;
-        right: 0;
+    #preload {
         height: 100vh;
-        width: 4vw;
+        width: 100vw;
+        position: fixed;
         background: black;
+        z-index: 998;
+        top: 0;
+        left: 0;
+        transition-duration: 1.5s;
+        transition-delay: .5s;
+        @extend %flex-column;
+        pointer-events: none;
+        img {
+            height: 120px;
+            transition-duration: .5s;
+        }
     }
-    .top {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        .logo {
-            width: calc(50vw - 4vw);
-            display: flex;
-            flex-direction: row;
+
+    .fixed {
+        top: 0;
+        left: 0;
+        z-index: 0;
+        .top, .bottom {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: $width;
+            background: black;
+        }
+        .bottom {
+            top: calc(100vh - #{$width});
+            left: $width;
+            width: calc(100vw - #{$widthDouble});
+        }
+        .right, .left {
+            position: fixed;
+            top: $width;
+            right: 0;
+            height: calc(100vh - #{$width});
+            width: $width;
+            background: black;
+        }
+        .top {
+            @extend %flex-row;
             justify-content: flex-start;
-            align-items: center;
-            img {
-                height: 1.5vw;
-                padding-right: 1vw;
-            }
-            a {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: center;
-                color: white;
-                font-size: 1.25vw;
-            }
-        }
-        .links {
-            a {
-                color: white;
-                @extend %p;
-                margin-right: 7vw;
-            }
-        }
-    }
-    .right {
-        label {
-            height: 4vw;
-            width: 4vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            div {
-                width: 1.5vw;
-                height: 1px;
-                background: white;
-                margin: .15vw;
-            }
-        }
-    }
-    .left {
-        right: calc(100vw - 4vw);
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 4vw 0;
-        box-sizing: border-box;
-        .scroll {
-            width: 20px;
-            height: 35px;
-            border: 2px solid white;
-            border-radius: 10px;
             box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
+            padding-left: $width;
+            .logo {
+                width: calc(50vw - #{$width});
+                @extend %flex-row;
+                justify-content: flex-start;
+                img {
+                    height: 24px;
+                    padding-right: 20px;
+                }
+                a {
+                    @extend %flex-row;
+                    justify-content: flex-start;
+                    color: white;
+                    font-size: 22px;
+                }
+            }
+            .links {
+                width: 420px;
+                @extend %flex-row;
+                justify-content: space-between;
+                &:hover a {
+                    opacity: .5;
+                }
+                a {
+                    color: white;
+                    @extend %p;
+                    transition-duration: .3s;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+            label {
+                height: $width;
+                width: $width;
+                margin-left: calc(50vw - 420px - #{$width});
+                @extend %flex-column;
+                div {
+                    width: 27px;
+                    height: 1px;
+                    background: white;
+                    margin: 2px;
+                }
+            }
+        }
+        .left {
+            right: calc(100vw - #{$width});
+            @extend %flex-column;
+            flex-direction: column-reverse;
             justify-content: flex-start;
-            align-items: center;
-            @keyframes wheel {
-                0% { height: 8px; margin-top: 10px; }
-                33% { height: 0; margin-top: 18px; }
-                66% { height: 0; margin-top: 10px; }
-                100% { height: 8px; margin-top: 10px; }
+            padding: $width 0;
+            box-sizing: border-box;
+            .scroll {
+                width: 20px;
+                height: 35px;
+                border: 2px solid white;
+                border-radius: 10px;
+                box-sizing: border-box;
+                @extend %flex-column;
+                justify-content: flex-start;
+                @keyframes wheel {
+                    0% { height: 8px; margin-top: 10px; }
+                    33% { height: 0; margin-top: 18px; }
+                    66% { height: 0; margin-top: 10px; }
+                    100% { height: 8px; margin-top: 10px; }
+                }
+                .wheel {
+                    width: 2px;
+                    height: 8px;
+                    background: white;
+                    animation: wheel 3s ease infinite;
+                }
             }
-            .wheel {
+            @keyframes scroll {
+                0% { height: 130px; margin-bottom: $width; }
+                33% { height: 0; margin-bottom: $width; }
+                66% { height: 0; margin-bottom: 210px; }
+                100% { height: 130px; margin-bottom: $width; }
+            }
+            .line {
+                height: 130px;
                 width: 2px;
-                height: 8px;
                 background: white;
-                animation: wheel 3s ease infinite;
+                margin-bottom: $width;
+                animation: scroll 3s ease infinite;
             }
         }
-        @keyframes scroll {
-            0% { height: 130px; margin-bottom: 4vw; }
-            33% { height: 0; margin-bottom: 4vw; }
-            66% { height: 0; margin-bottom: 210px; }
-            100% { height: 130px; margin-bottom: 4vw; }
+        .bottom {
+            @extend %flex-row;
+            justify-content: flex-end;
+            p {
+                @extend %p;
+                color: white;
+                opacity: .6;
+            }
         }
-        .line {
-            height: 130px;
-            width: 2px;
+    }
+    #content {
+        position: absolute;
+        z-index: 1;
+        top: $width;
+        left: $width;
+        width: calc(100vw - #{$widthDouble});
+        height: calc(100vh - #{$widthDouble});
+        overflow-x: hidden;
+        overflow-y: scroll;
+        margin: 0;
+        padding: 0;
+        &::-webkit-scrollbar {
+            width: 0px;
+            background: black;
+        }
+        &::-webkit-scrollbar-thumb {
             background: white;
-            margin-bottom: 4vw;
-            animation: scroll 3s ease infinite;
         }
     }
-    .bottom {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        p {
-            @extend %p;
-            color: white;
-            opacity: .6;
-        }
-    }
-}
-#content {
-    position: absolute;
-    z-index: 1;
-    top: 4vw;
-    left: 4vw;
-    width: calc(100vw - 8vw);
-    height: calc(100vh - 8vw);
-    overflow-x: hidden;
-    overflow-y: scroll;
-    margin: 0;
-    padding: 0;
-    &::-webkit-scrollbar {
-        width: 0px;
+    .button {
         background: black;
+        padding: 20px 40px;
+        color: white;
+        @extend %p;
+        transition-duration: .3s;
+        &:hover {
+            background: rgba(0,0,0,0.75);
+        }
     }
-    &::-webkit-scrollbar-thumb {
-        background: white;
-    }
-}
-.button {
-    background: black;
-    padding: 20px 40px;
-    color: white;
-    @extend %p;
 }

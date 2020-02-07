@@ -1,15 +1,4 @@
-.hero h2 {
-  font-size: 3.5vw;
-}
-
 .hero {
-  height: calc(100vh - 8vw);
-  background-image: url("../img/bmw-e30.jpg");
-  background-size: cover;
-  background-position: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 4vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,6 +6,26 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero h2 {
+  font-size: 60px;
+}
+
+.hero {
+  height: 100%;
+  background-image: url("../img/bmw-e30.jpg");
+  background-size: cover;
+  background-position: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 60px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -27,12 +36,12 @@
 
 .hero h2 {
   line-height: 1.2;
-  max-width: 50vw;
+  max-width: 900px;
   margin-bottom: 40px;
 }
 
-section {
-  padding: 4vw;
+.section1 {
+  padding: 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }

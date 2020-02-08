@@ -1,10 +1,18 @@
 @media screen and (min-width: 1001px) {
+  .title {
+    font-size: 90px;
+    line-height: 1;
+  }
+  .paragraph {
+    font-size: 24px;
+    line-height: 1.618;
+  }
   * {
     margin: 0;
     padding: 0;
     font-family: 'acumin-pro-wide', sans-serif;
     cursor: none;
-    font-weight: 300;
+    font-weight: 400;
   }
   #cursorRing, #preload, .fixed .top label, .fixed .left, .fixed .left .scroll {
     display: -webkit-box;
@@ -36,7 +44,7 @@
         -ms-flex-align: center;
             align-items: center;
   }
-  .fixed .top .links a, .fixed .bottom p, .button {
+  .fixed .top .links a, .fixed .bottom p, .button, .button-white {
     font-size: 16px;
   }
   a {
@@ -44,14 +52,13 @@
   }
   html {
     overflow: hidden;
-    scroll-behavior: smooth;
   }
   body {
     overflow: hidden;
   }
   #cursor {
-    top: 0;
-    left: 0;
+    top: 50vh;
+    left: 50vw;
     position: fixed;
     z-index: 1000;
     pointer-events: none;
@@ -67,8 +74,8 @@
             transition-timing-function: ease-out;
   }
   #cursorRing {
-    top: 0;
-    left: 0;
+    top: 50vh;
+    left: 50vw;
     position: fixed;
     z-index: 999;
     pointer-events: none;
@@ -328,6 +335,7 @@
     overflow-y: scroll;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
   }
   #content::-webkit-scrollbar {
     width: 0px;
@@ -345,6 +353,16 @@
   }
   .button:hover {
     background: rgba(0, 0, 0, 0.75);
+  }
+  .button-white {
+    background: white;
+    padding: 20px 40px;
+    color: black;
+    -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+  }
+  .button-white:hover {
+    background: rgba(255, 255, 255, 0.75);
   }
 }
 /*# sourceMappingURL=master.css.map */

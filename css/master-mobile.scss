@@ -1,9 +1,17 @@
 @media screen and (max-width: 1000px) {
+    .title {
+        font-size: 90px;
+        line-height: 1;
+    }
+    .paragraph {
+        font-size: 24px;
+        line-height: 1.618;
+    }
     * {
         margin: 0;
         padding: 0;
         font-family: 'acumin-pro-wide', sans-serif;
-        font-weight: 300;
+        font-weight: 400;
     }
     %flex-column {
         display: flex;
@@ -21,7 +29,7 @@
         font-size: 16px;
     }
     %h2 {
-        font-size: 60px;
+        font-size: 50px;
     }
     $width: 60px;
     $widthDouble: 120px;
@@ -30,7 +38,6 @@
     }
     html {
         overflow: hidden;
-        scroll-behavior: smooth;
     }
     body {
         overflow: hidden;
@@ -122,6 +129,7 @@
         overflow-y: scroll;
         margin: 0;
         padding: 0;
+        scroll-behavior: smooth;
         &::-webkit-scrollbar {
             width: 0px;
             background: black;

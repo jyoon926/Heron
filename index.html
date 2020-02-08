@@ -27,7 +27,7 @@
             </div>
             <div class="links">
                 <a href="" onmouseover="hover()" onmouseout="hoverOut()">Models</a>
-                <a href="" onmouseover="hover()" onmouseout="hoverOut()">Process</a>
+                <a href="" onmouseover="hover()" onmouseout="hoverOut()">Technology</a>
                 <a href="" onmouseover="hover()" onmouseout="hoverOut()">Company</a>
             </div>
             <label for="#" onmouseover="hover()" onmouseout="hoverOut()"><div class="a"></div><div class="b"></div class=""><div class="c"></div></label>
@@ -44,15 +44,38 @@
 
     <div id="content">
         <div class="hero">
-            <h2>Converting classic gasoline cars to all electric.</h2>
-            <a href="#" class="button" onmouseover="hover()" onmouseout="hoverOut()">Learn More</a>
+            <h2>Reviving beloved classic cars with sustainable electric solutions.</h2>
+            <a href="#about" class="button" onmouseover="hover()" onmouseout="hoverOut()">Learn More</a>
         </div>
-        <section class="section1"></section>
+        <section class="mission" id="about">
+            <h2 class="title">Converting classics to green electrics.</h2>
+            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#about" class="button-white" onmouseover="hover()" onmouseout="hoverOut()">Learn More</a>
+        </section>
+        <section class="models">
+            <h2 class="title">Popular Models</h2>
+            <div class="cont">
+                <a href="#" class="model" onmouseover="hover()" onmouseout="hoverOut()">
+                    <div class="img">
+                    </div>
+                    <p class="name">BMW e30</p>
+                </a>
+                <a href="#" class="model" onmouseover="hover()" onmouseout="hoverOut()">
+                    <div class="img"></div>
+                    <p class="name">BMW</p>
+                </a>
+                <a href="#" class="model" onmouseover="hover()" onmouseout="hoverOut()">
+                    <div class="img"></div>
+                    <p class="name">BMW</p>
+                </a>
+            </div>
+            <a href="#about" class="button" onmouseover="hover()" onmouseout="hoverOut()">Full List</a>
+        </section>
     </div>
 
     <div id="preload"><img id="preloadImg" src="img/logo white.svg" alt=""></div>
     <script src="js/script.js"></script>
-    <!--script>
+    <script>
         $('#checkbox').change(function () {
             if ($(this).prop("checked")) {
                 $('html').css("overflowY", "hidden");
@@ -61,6 +84,17 @@
                 $('html').css("overflowY", "scroll");
             }
         });
-    </script-->
+        function hover() {
+            document.getElementById('cursorRing').style.width = "120px";
+            document.getElementById('cursorRing').style.height = "120px";
+            document.getElementById('cursorRing').style.margin = "-60px";
+        }
+
+        function hoverOut() {
+            document.getElementById('cursorRing').style.width = "80px";
+            document.getElementById('cursorRing').style.height = "80px";
+            document.getElementById('cursorRing').style.margin = "-40px";
+        }
+    </script>
 </bodyonload="init()">
 </html>

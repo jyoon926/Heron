@@ -1,50 +1,3 @@
-window.addEventListener('mousemove', cursor);
-var $win = $(window);
-var _cursor = document.getElementById('cursor');
-var _cursorRing = document.getElementById('cursorRing');
-
-function everyTick() {
-    cursor();
-    setTimeout(arguments.callee, 0);
-}
-
-function getX(event) //left position
-{
-    if(!event.pageX)
-    {
-        return event.clientX;
-    }
-    else
-    {
-        return event.pageX - (document.body.scrollLeft || document.documentElement.scrollLeft);
-    }
-}
-
-function getY(event) //top position
-{
-    if(event.pageY)
-    {
-        return event.pageY - (document.body.scrollTop || document.documentElement.scrollTop);
-    }
-    else
-    {
-        return event.clientY;
-    }
-}
-function getScroll()
-{
-}
-
-var offset = 40;
-
-
-function cursor() {
-    _cursor.style.top = getY(event) + "px";
-    _cursor.style.left = getX(event) + "px";
-    _cursorRing.style.top = getY(event) + "px";
-    _cursorRing.style.left = getX(event) + "px";
-}
-
 function hover() {
     _cursorRing.style.width = "120px";
     _cursorRing.style.height = "120px";
@@ -56,9 +9,12 @@ function hoverOut() {
     _cursorRing.style.height = "80px";
     _cursorRing.style.margin = "-40px";
 }
-
-window.onload = function load() {
-}
+document.addEventListener("mousemove", e => {
+    document.getElementById('cursorRing').style.top = e.pageY + "px";
+    document.getElementById('cursorRing').style.left = e.pageX + "px";
+    document.getElementById('cursor').style.top = e.pageY + "px";
+    document.getElementById('cursor').style.left = e.pageX + "px";
+})
 
 function onReady(callback) {
     var intervalID = window.setInterval(checkReady, 1000);

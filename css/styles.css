@@ -1,4 +1,4 @@
-.hero {
+.hero, .mission, .models, .models .cont .model {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,9 +40,81 @@
   margin-bottom: 40px;
 }
 
-.section1 {
-  padding: 60px;
+.mission {
+  padding: 120px 60px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background: #000;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.mission p, .mission h2 {
+  color: white;
+}
+
+.mission p {
+  margin: 120px;
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 60px;
+          column-gap: 60px;
+}
+
+.mission a {
+  margin-left: 120px;
+}
+
+.models {
+  padding: 120px 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: white;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.models h2 {
+  margin-bottom: 120px;
+}
+
+.models .cont {
+  width: 100%;
+  display: inline-block;
+  -webkit-column-count: 3;
+          column-count: 3;
+  -webkit-column-gap: 60px;
+          column-gap: 60px;
+}
+
+.models .cont .model {
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.models .cont .model .img {
+  width: 100%;
+  height: 400px;
+  background-image: url("../img/bmw-e30.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.models .cont .model .name {
+  font-size: 24px;
+  line-height: 1;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: black;
+  color: white;
 }
 /*# sourceMappingURL=styles.css.map */

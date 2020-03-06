@@ -1,4 +1,4 @@
-.hero, .mission, .models, .models .cont .model {
+.hero, .mission, .models .cont .model {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,6 +71,13 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -82,11 +89,14 @@
 
 .models .cont {
   width: 100%;
-  display: inline-block;
-  -webkit-column-count: 3;
-          column-count: 3;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 60px;
   -webkit-column-gap: 60px;
           column-gap: 60px;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  margin-bottom: 60px;
 }
 
 .models .cont .model {
@@ -97,13 +107,11 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin-bottom: 60px;
 }
 
 .models .cont .model .img {
   width: 100%;
-  height: 400px;
-  background-image: url("../img/bmw-e30.jpg");
+  padding-bottom: 65%;
   background-size: cover;
   background-position: center;
 }
@@ -116,5 +124,21 @@
           box-sizing: border-box;
   background: black;
   color: white;
+}
+
+.models .cont .model:nth-child(1) .img {
+  background-image: url("../img/Cars/BMW-E30.jpg");
+}
+
+.models .cont .model:nth-child(2) .img {
+  background-image: url("../img/Cars/924.jpg");
+}
+
+.models .cont .model:nth-child(3) .img {
+  background-image: url("../img/Cars/DMC-12.jpg");
+}
+
+.models .cont .model:nth-child(4) .img {
+  background-image: url("../img/Cars/Datsun-240c.jpg");
 }
 /*# sourceMappingURL=styles.css.map */

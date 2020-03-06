@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Verto</title>
+    <link rel="stylesheet" href="https://use.typekit.net/gys3ndu.css">
+    <!--<link rel="stylesheet" href="css/fonts.css"-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/master-mobile.css">
+    <link rel="icon" href="img/logo.png">
+</head>
+<body onload="init()">
+    <div id="cursor"></div>
+    <div id="cursorRing">
+        <div class="out"></div>
+        <div class="in"></div>
+    </div>
+    
+    <div class="fixed">
+        <div class="top">
+            <div class="logo">
+                <a href="index.html" onmouseover="hover()" onmouseout="hoverOut()"><img src="img/logo white.svg" alt="">VERTO</a>
+            </div>
+            <div class="links">
+                <a href="models.html" onmouseover="hover()" onmouseout="hoverOut()">Models</a>
+                <a href="" onmouseover="hover()" onmouseout="hoverOut()">Technology</a>
+                <a href="" onmouseover="hover()" onmouseout="hoverOut()">Company</a>
+            </div>
+            <label for="#" onmouseover="hover()" onmouseout="hoverOut()"><div class="a"></div><div class="b"></div class=""><div class="c"></div></label>
+        </div>
+        <div class="right"></div>
+        <div class="bottom">
+            <p>© VERTO</p>
+        </div>
+        <div class="left">
+            <div class="scroll"><div class="wheel"></div></div>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <div id="content">
+        <section class="models">
+            <h2 class="title">All Models</h2>
+            <div class="cont">
+                <a href="#" class="model" onmouseover="hover()" onmouseout="hoverOut()">
+                    <div class="img">
+                    </div>
+                    <p class="name">BMW e30</p>
+                </a>
+                <a href="#" class="model" onmouseover="hover()" onmouseout="hoverOut()">
+                    <div class="img"></div>
+                    <p class="name">Porsche 923</p>
+                </a>
+                <a href="#" class="model" onmouseover="hover()" onmouseout="hoverOut()">
+                    <div class="img"></div>
+                    <p class="name">Delorean</p>
+                </a>
+                <a href="#" class="model" onmouseover="hover()" onmouseout="hoverOut()">
+                    <div class="img"></div>
+                    <p class="name">Datsun 240c</p>
+                </a>
+            </div>
+            <a href="models.html" class="button" onmouseover="hover()" onmouseout="hoverOut()">Full List</a>
+        </section>
+    </div>
+
+    <!--<div id="preload"><img id="preloadImg" src="img/logo white.svg" alt=""></div>-->
+    <script src="js/script.js"></script>
+    <script>
+        $('#checkbox').change(function () {
+            if ($(this).prop("checked")) {
+                $('html').css("overflowY", "hidden");
+            }
+            else {
+                $('html').css("overflowY", "scroll");
+            }
+        });
+        function hover() {
+            document.getElementById('cursorRing').style.width = "120px";
+            document.getElementById('cursorRing').style.height = "120px";
+            document.getElementById('cursorRing').style.margin = "-60px";
+        }
+
+        function hoverOut() {
+            document.getElementById('cursorRing').style.width = "80px";
+            document.getElementById('cursorRing').style.height = "80px";
+            document.getElementById('cursorRing').style.margin = "-40px";
+        }
+    </script>
+</bodyonload="init()">
+</html>
